@@ -1,6 +1,14 @@
 # FLiP-Py-Pi-GasThermal
-Apache Pulsar, Python, Raspberry Pi, Gas + Thermal Sensors, Apache Flink, Trino/Presto SQL
 
+Apache Pulsar, Python, Raspberry Pi, Gas Sensor + Thermal Camera Sensors, Apache Flink, Trino/Presto SQL
+
+## Sensors
+
+* Pimoroni BreakoutGarden:  SGP30 
+** Sensiron SGP30 TVOC and eCO2 sensor (datasheet)
+** TVOC sensing from 0-60,000 ppb (parts per billion)
+** CO2 sensing from 400 to 60,000 ppm (parts per million)
+* Pimoroni BreakoutGarden: MLX90640 Thermal Camera
 
 
 ### References
@@ -10,3 +18,5 @@ Apache Pulsar, Python, Raspberry Pi, Gas + Thermal Sensors, Apache Flink, Trino/
 * https://github.com/tspannhw/minifi-gasthermal
 * https://dev.to/tspannhw/cloudera-edge2ai-minifi-java-agent-with-raspberry-pi-and-thermal-camera-and-air-quality-sensor-part-1-3oo9
 * https://www.datainmotion.dev/2020/01/cloudera-edge2ai-minifi-java-agent-with.html
+* https://github.com/tspannhw/FLiP-Pi-Thermal
+* https://github.com/pimoroni/mlx90640-library
