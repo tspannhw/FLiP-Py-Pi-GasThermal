@@ -5,9 +5,9 @@ Apache Pulsar, Python, Raspberry Pi, Gas Sensor + Thermal Camera Sensors, Apache
 ## Sensors
 
 * Pimoroni BreakoutGarden:  SGP30 
-** Sensiron SGP30 TVOC and eCO2 sensor (datasheet)
-** TVOC sensing from 0-60,000 ppb (parts per billion)
-** CO2 sensing from 400 to 60,000 ppm (parts per million)
+  - Sensiron SGP30 TVOC and eCO2 sensor (datasheet)
+  - TVOC sensing from 0-60,000 ppb (parts per billion)
+  - CO2 sensing from 400 to 60,000 ppm (parts per million)
 * Pimoroni BreakoutGarden: MLX90640 Thermal Camera
 
 
