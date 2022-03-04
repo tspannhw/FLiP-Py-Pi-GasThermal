@@ -2,6 +2,8 @@
 
 Apache Pulsar, Python, Raspberry Pi, Gas Sensor + Thermal Camera Sensors, Apache Flink, Trino/Presto SQL
 
+![ThermalCam](https://github.com/tspannhw/FLiP-Py-Pi-GasThermal/blob/main/mlx90640-2022-03-04-15-36-31.gif)
+
 ## Sensors
 
 * Pimoroni BreakoutGarden:  SGP30 
