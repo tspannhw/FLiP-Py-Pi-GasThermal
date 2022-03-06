@@ -100,6 +100,34 @@ presto> select * from pulsar."public/default"."garden3";
  6.5 | 103496.4 MB | 1646594688.9728699 |   424            | garden3 | garden3  | 192.168.1.198 | dc:a6:32:32:98:20 |    9.2 | 20220306192448_8809fc3e-75f8-4aca-a141-6e5d4872b0de |       0 | 03/06
  6.5 | 103496.4 MB | 1646594690.0051649 |   412            | garden3 | garden3  | 192.168.1.198 | dc:a6:32:32:98:20 |    9.2 | 20220306192449_0d0b4b62-0321-4bcd-952b-14607333d9f5 |       0 | 03/06
 
+presto> desc pulsar."public/default"."garden3";
+      Column       |   Type    | Extra |                                   Comment                                   
+-------------------+-----------+-------+-----------------------------------------------------------------------------
+ cpu               | real      |       | ["null","float"]                                                            
+ diskusage         | varchar   |       | ["null","string"]                                                           
+ endtime           | varchar   |       | ["null","string"]                                                           
+ equivalentco2ppm  | varchar   |       | ["null","string"]                                                           
+ host              | varchar   |       | ["null","string"]                                                           
+ hostname          | varchar   |       | ["null","string"]                                                           
+ ipaddress         | varchar   |       | ["null","string"]                                                           
+ macaddress        | varchar   |       | ["null","string"]                                                           
+ memory            | real      |       | ["null","float"]                                                            
+ rowid             | varchar   |       | ["null","string"]                                                           
+ runtime           | integer   |       | ["null","int"]                                                              
+ starttime         | varchar   |       | ["null","string"]                                                           
+ systemtime        | varchar   |       | ["null","string"]                                                           
+ totalvocppb       | varchar   |       | ["null","string"]                                                           
+ ts                | integer   |       | ["null","int"]                                                              
+ uuid              | varchar   |       | ["null","string"]                                                           
+ __partition__     | integer   |       | The partition number which the message belongs to                           
+ __event_time__    | timestamp |       | Application defined timestamp in milliseconds of when the event occurred    
+ __publish_time__  | timestamp |       | The timestamp in milliseconds of when event as published                    
+ __message_id__    | varchar   |       | The message ID of the message used to generate this row                     
+ __sequence_id__   | bigint    |       | The sequence ID of the message used to generate this row                    
+ __producer_name__ | varchar   |       | The name of the producer that publish the message used to generate this row 
+ __key__           | varchar   |       | The partition key for the topic                                             
+ __properties__    | varchar   |       | User defined properties    
+ 
 ````
 
 ### References
