@@ -397,9 +397,64 @@ converted_type (legacy): UTF8
 
 ````
 
+### Flink
+
+````
+CREATE CATALOG pulsar WITH (
+   'type' = 'pulsar',
+   'service-url' = 'pulsar://pulsar1:6650',
+   'admin-url' = 'http://pulsar1:8080',
+   'format' = 'json'
+);
+
+USE CATALOG pulsar;
+
+SHOW TABLES;
+
+Flink SQL> describe garden3;
++------------------+--------+------+-----+--------+-----------+
+|             name |   type | null | key | extras | watermark |
++------------------+--------+------+-----+--------+-----------+
+|              cpu |  FLOAT | true |     |        |           |
+|        diskusage | STRING | true |     |        |           |
+|          endtime | STRING | true |     |        |           |
+| equivalentco2ppm | STRING | true |     |        |           |
+|             host | STRING | true |     |        |           |
+|         hostname | STRING | true |     |        |           |
+|        ipaddress | STRING | true |     |        |           |
+|       macaddress | STRING | true |     |        |           |
+|           memory |  FLOAT | true |     |        |           |
+|            rowid | STRING | true |     |        |           |
+|          runtime |    INT | true |     |        |           |
+|        starttime | STRING | true |     |        |           |
+|       systemtime | STRING | true |     |        |           |
+|      totalvocppb | STRING | true |     |        |           |
+|               ts |    INT | true |     |        |           |
+|             uuid | STRING | true |     |        |           |
++------------------+--------+------+-----+--------+-----------+
+16 rows in set
+
+select equivalentco2ppm, totalvocppb, cpu, starttime, systemtime, ts, cpu, diskusage, endtime, memory, uuid from garden3;
+
+select max(equivalentco2ppm) as MaxCO2, max(totalvocppb) as MaxVocPPB from garden3;
+
+
+// TODO
+
+Add your own table
+
+  publishTime TIMESTAMP(3) METADATA,
+  WATERMARK FOR publishTime AS publishTime - INTERVAL '5' SECOND
+  
+
+````
+
 ### References
 
 * https://pypi.org/project/parquet-tools/
+* https://nightlies.apache.org/flink/flink-docs-release-1.14/docs/dev/table/sqlclient/
+* https://github.com/tspannhw/StreamingAnalyticsUsingFlinkSQL/
+* https://nightlies.apache.org/flink/flink-docs-release-1.14/docs/connectors/datastream/pulsar/
 * https://shop.pimoroni.com/products/sgp30-air-quality-sensor-breakout?variant=30924091719763
 * https://shop.pimoroni.com/products/mlx90640-thermal-camera-breakout?variant=12536948654163
 * https://github.com/tspannhw/minifi-gasthermal
