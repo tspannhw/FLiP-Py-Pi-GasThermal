@@ -130,8 +130,276 @@ presto> desc pulsar."public/default"."garden3";
  
 ````
 
+### Spark Structured Streaming
+
+* https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#output-sinks
+
+````
+val dfPulsar = spark.readStream.format("pulsar").option("service.url", "pulsar://localhost:6650").option("admin.url", "http://localhost:8080").option("topic", "persistent://public/default/garden3").load()
+dfPulsar.printSchema()
+val pQuery = dfPulsar.selectExpr("*").writeStream.format("parquet").option("truncate", false) .option("checkpointLocation", "/tmp/checkpoint").option("path", "/opt/demo/gasthermal").start()
+    
+pQuery.explain()
+pQuery.awaitTermination()
+pQuery.stop()
+
+// can be "orc", "json", "csv", etc.
+
+````
+
+### Example Parquet Files
+
+````
+pip3 install parquet-tools -U
+
+parquet-tools inspect part-00000-b7e1f8dc-956d-4130-bc59-7b1435e41391-c000.snappy.parquet
+
+############ file meta data ############
+created_by: parquet-mr version 1.12.1 (build 2a5c06c58fa987f85aa22170be14d927d5ff6e7d)
+num_columns: 23
+num_rows: 1
+num_row_groups: 1
+format_version: 1.0
+serialized_size: 5071
+
+
+############ Columns ############
+cpu
+diskusage
+endtime
+equivalentco2ppm
+host
+hostname
+ipaddress
+macaddress
+memory
+rowid
+runtime
+starttime
+systemtime
+totalvocppb
+ts
+uuid
+__key
+__topic
+__messageId
+__publishTime
+__eventTime
+key
+value
+
+############ Column(cpu) ############
+name: cpu
+path: cpu
+max_definition_level: 1
+max_repetition_level: 0
+physical_type: FLOAT
+logical_type: None
+converted_type (legacy): NONE
+
+############ Column(diskusage) ############
+name: diskusage
+path: diskusage
+max_definition_level: 1
+max_repetition_level: 0
+physical_type: BYTE_ARRAY
+logical_type: String
+converted_type (legacy): UTF8
+
+############ Column(endtime) ############
+name: endtime
+path: endtime
+max_definition_level: 1
+max_repetition_level: 0
+physical_type: BYTE_ARRAY
+logical_type: String
+converted_type (legacy): UTF8
+
+############ Column(equivalentco2ppm) ############
+name: equivalentco2ppm
+path: equivalentco2ppm
+max_definition_level: 1
+max_repetition_level: 0
+physical_type: BYTE_ARRAY
+logical_type: String
+converted_type (legacy): UTF8
+
+############ Column(host) ############
+name: host
+path: host
+max_definition_level: 1
+max_repetition_level: 0
+physical_type: BYTE_ARRAY
+logical_type: String
+converted_type (legacy): UTF8
+
+############ Column(hostname) ############
+name: hostname
+path: hostname
+max_definition_level: 1
+max_repetition_level: 0
+physical_type: BYTE_ARRAY
+logical_type: String
+converted_type (legacy): UTF8
+
+############ Column(ipaddress) ############
+name: ipaddress
+path: ipaddress
+max_definition_level: 1
+max_repetition_level: 0
+physical_type: BYTE_ARRAY
+logical_type: String
+converted_type (legacy): UTF8
+
+############ Column(macaddress) ############
+name: macaddress
+path: macaddress
+max_definition_level: 1
+max_repetition_level: 0
+physical_type: BYTE_ARRAY
+logical_type: String
+converted_type (legacy): UTF8
+
+############ Column(memory) ############
+name: memory
+path: memory
+max_definition_level: 1
+max_repetition_level: 0
+physical_type: FLOAT
+logical_type: None
+converted_type (legacy): NONE
+
+############ Column(rowid) ############
+name: rowid
+path: rowid
+max_definition_level: 1
+max_repetition_level: 0
+physical_type: BYTE_ARRAY
+logical_type: String
+converted_type (legacy): UTF8
+
+############ Column(runtime) ############
+name: runtime
+path: runtime
+max_definition_level: 1
+max_repetition_level: 0
+physical_type: INT32
+logical_type: None
+converted_type (legacy): NONE
+
+############ Column(starttime) ############
+name: starttime
+path: starttime
+max_definition_level: 1
+max_repetition_level: 0
+physical_type: BYTE_ARRAY
+logical_type: String
+converted_type (legacy): UTF8
+
+############ Column(systemtime) ############
+name: systemtime
+path: systemtime
+max_definition_level: 1
+max_repetition_level: 0
+physical_type: BYTE_ARRAY
+logical_type: String
+converted_type (legacy): UTF8
+
+############ Column(totalvocppb) ############
+name: totalvocppb
+path: totalvocppb
+max_definition_level: 1
+max_repetition_level: 0
+physical_type: BYTE_ARRAY
+logical_type: String
+converted_type (legacy): UTF8
+
+############ Column(ts) ############
+name: ts
+path: ts
+max_definition_level: 1
+max_repetition_level: 0
+physical_type: INT32
+logical_type: None
+converted_type (legacy): NONE
+
+############ Column(uuid) ############
+name: uuid
+path: uuid
+max_definition_level: 1
+max_repetition_level: 0
+physical_type: BYTE_ARRAY
+logical_type: String
+converted_type (legacy): UTF8
+
+############ Column(__key) ############
+name: __key
+path: __key
+max_definition_level: 1
+max_repetition_level: 0
+physical_type: BYTE_ARRAY
+logical_type: None
+converted_type (legacy): NONE
+
+############ Column(__topic) ############
+name: __topic
+path: __topic
+max_definition_level: 1
+max_repetition_level: 0
+physical_type: BYTE_ARRAY
+logical_type: String
+converted_type (legacy): UTF8
+
+############ Column(__messageId) ############
+name: __messageId
+path: __messageId
+max_definition_level: 1
+max_repetition_level: 0
+physical_type: BYTE_ARRAY
+logical_type: None
+converted_type (legacy): NONE
+
+############ Column(__publishTime) ############
+name: __publishTime
+path: __publishTime
+max_definition_level: 1
+max_repetition_level: 0
+physical_type: INT96
+logical_type: None
+converted_type (legacy): NONE
+
+############ Column(__eventTime) ############
+name: __eventTime
+path: __eventTime
+max_definition_level: 1
+max_repetition_level: 0
+physical_type: INT96
+logical_type: None
+converted_type (legacy): NONE
+
+############ Column(key) ############
+name: key
+path: __messageProperties.key_value.key
+max_definition_level: 2
+max_repetition_level: 1
+physical_type: BYTE_ARRAY
+logical_type: String
+converted_type (legacy): UTF8
+
+############ Column(value) ############
+name: value
+path: __messageProperties.key_value.value
+max_definition_level: 3
+max_repetition_level: 1
+physical_type: BYTE_ARRAY
+logical_type: String
+converted_type (legacy): UTF8
+
+````
+
 ### References
 
+* https://pypi.org/project/parquet-tools/
 * https://shop.pimoroni.com/products/sgp30-air-quality-sensor-breakout?variant=30924091719763
 * https://shop.pimoroni.com/products/mlx90640-thermal-camera-breakout?variant=12536948654163
 * https://github.com/tspannhw/minifi-gasthermal
