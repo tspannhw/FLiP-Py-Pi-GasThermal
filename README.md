@@ -449,6 +449,41 @@ Add your own table
 
 ````
 
+### MongoDB 
+
+````
+mongo -u username1 -p password1 --authenticationDatabase admin pulsar1:27017/inventory
+
+show databases
+
+db.createCollection("garden3")
+
+show collections
+
+db.garden3.find().pretty()
+
+{
+        "_id" : ObjectId("622f7315f99b9a338d60592f"),
+        "cpu" : 0,
+        "diskusage" : "101615.9 MB",
+        "endtime" : "1647276083.2033532",
+        "equivalentco2ppm" : "  407",
+        "host" : "garden3",
+        "hostname" : "garden3",
+        "ipaddress" : "192.168.1.199",
+        "macaddress" : "dc:a6:32:32:98:20",
+        "memory" : 8.8,
+        "rowid" : "20220314164123_0e19c5e6-45f5-405e-bd93-9aed05b37630",
+        "runtime" : 0,
+        "starttime" : "03/14/2022 12:41:23",
+        "systemtime" : "03/14/2022 12:41:24",
+        "totalvocppb" : "  5",
+        "ts" : 1647276084,
+        "uuid" : "garden3_uuid_xrl_20220314164123"
+}
+
+````
+
 ### References
 
 * https://pypi.org/project/parquet-tools/
