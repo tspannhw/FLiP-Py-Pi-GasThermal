@@ -18,7 +18,7 @@ Apache Pulsar, Python, Raspberry Pi, Gas Sensor + Thermal Camera Sensors, Apache
 
 ![designthis](https://github.com/tspannhw/FLiP-Py-Pi-GasThermal/blob/main/airqualityedge.png?raw=true)
 ![more](https://github.com/tspannhw/FLiP-Py-Pi-GasThermal/blob/main/airqualityexample-2022-02-02-0846.png?raw=true)
-
+![sendmoredata](https://github.com/tspannhw/FLiP-Py-Pi-GasThermal/blob/main/pythonedge-2022-02-02-0846.png?raw=true)
 
 ### Build
 
@@ -498,6 +498,10 @@ Add your own table
 
 ![ConsumePulsar](https://github.com/tspannhw/FLiP-Py-Pi-GasThermal/blob/main/consumepulsar.jpg?raw=true)
 
+* Full Apache NiFi Data Flow with Apache Pulsar and MongoDB
+
+![Flow](https://github.com/tspannhw/FLiP-Py-Pi-GasThermal/blob/main/nififlowgarden3.jpg?raw=true)
+
 
 ### MongoDB 
 
@@ -535,6 +539,8 @@ db.garden3.find().pretty()
 ````
 
 ![mongo](https://github.com/tspannhw/FLiP-Py-Pi-GasThermal/blob/main/mongodbrow.jpg?raw=true)
+![mongoquery](https://github.com/tspannhw/FLiP-Py-Pi-GasThermal/blob/main/mongoinfo.png?raw=true)
+
 
 ### References
 
