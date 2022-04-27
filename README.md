@@ -130,6 +130,21 @@ presto> desc pulsar."public/default"."garden3";
  
 ````
 
+Presto/Trino gives us access to all that tasty meta data for each message/event/row/record/thing/data stuff.   All with special names to help prevent collisions.
+
+#### Meta Data
+
+* __partition__  - if we have a partitioned topic, which partition does this message belong to.
+* __event_time__ - you know what time it is!   Timestamp in ms for event action.
+* __publish_time__ - when was this message published to the topic?
+* __message_id__ - unique id for this message
+* __sequence_id__ - ordering information for this message
+* __producer_name__ - who sent me this?
+* __key__ - did you assign a key like I asked you to?
+* __properties__ - all those extra fields you added around the payload
+
+
+
 ### Spark Structured Streaming
 
 * https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#output-sinks
@@ -448,6 +463,13 @@ Add your own table
   
 
 ````
+
+### Apache NiFi (FLiPN)
+
+* Consume a Message from Pulsar
+
+![ConsumeNiFi](https://github.com/tspannhw/FLiP-Py-Pi-GasThermal/blob/main/NIFIpulsarProcessorSelection.jpg?raw=true)
+
 
 ### MongoDB 
 
