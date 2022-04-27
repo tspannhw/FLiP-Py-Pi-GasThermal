@@ -12,6 +12,14 @@ Apache Pulsar, Python, Raspberry Pi, Gas Sensor + Thermal Camera Sensors, Apache
   - CO2 sensing from 400 to 60,000 ppm (parts per million)
 * Pimoroni BreakoutGarden: MLX90640 Thermal Camera
 
+![HardWare](https://github.com/tspannhw/FLiP-Py-Pi-GasThermal/blob/main/garden3.jpeg?raw=true)
+
+### Architecture
+
+![designthis](https://github.com/tspannhw/FLiP-Py-Pi-GasThermal/blob/main/airqualityedge.png?raw=true)
+![more](https://github.com/tspannhw/FLiP-Py-Pi-GasThermal/blob/main/airqualityexample-2022-02-02-0846.png?raw=true)
+
+
 ### Build
 
 ````
@@ -161,6 +169,16 @@ pQuery.stop()
 // can be "orc", "json", "csv", etc.
 
 ````
+
+![Spark](https://github.com/tspannhw/FLiP-Py-Pi-GasThermal/blob/main/airqualitysparkschema.jpg?raw=true)
+
+
+### Show Me The Data
+
+We can visualize data from Apache Pulsar by consuming it through the web sockets interface in a simple JQuery Single Page Web Application like below.
+
+![JavaScript](https://github.com/tspannhw/FLiP-Py-Pi-GasThermal/blob/main/airqualitytable.jpg?raw=true)
+
 
 ### Example Parquet Files
 
@@ -464,11 +482,21 @@ Add your own table
 
 ````
 
+![Flink](https://github.com/tspannhw/FLiP-Py-Pi-GasThermal/blob/main/flinksqlairquality.jpg?raw=true)
+![Flink2](https://github.com/tspannhw/FLiP-Py-Pi-GasThermal/blob/main/flinksqlairqualityrowsummary.jpg?raw=true)
+![Flink3](https://github.com/tspannhw/FLiP-Py-Pi-GasThermal/blob/main/flinksqlairrows.jpg?raw=true)
+
+
+
 ### Apache NiFi (FLiPN)
 
-* Consume a Message from Pulsar
+* Choose a processor from the palette
 
-![ConsumeNiFi](https://github.com/tspannhw/FLiP-Py-Pi-GasThermal/blob/main/NIFIpulsarProcessorSelection.jpg?raw=true)
+![ShowNiFi](https://github.com/tspannhw/FLiP-Py-Pi-GasThermal/blob/main/NIFIpulsarProcessorSelection.jpg?raw=true)
+
+* Consume messages from Apache Pulsar
+
+![ConsumePulsar](https://github.com/tspannhw/FLiP-Py-Pi-GasThermal/blob/main/consumepulsar.jpg?raw=true)
 
 
 ### MongoDB 
@@ -506,6 +534,8 @@ db.garden3.find().pretty()
 
 ````
 
+![mongo](https://github.com/tspannhw/FLiP-Py-Pi-GasThermal/blob/main/mongodbrow.jpg?raw=true)
+
 ### References
 
 * https://pypi.org/project/parquet-tools/
@@ -519,3 +549,11 @@ db.garden3.find().pretty()
 * https://www.datainmotion.dev/2020/01/cloudera-edge2ai-minifi-java-agent-with.html
 * https://github.com/tspannhw/FLiP-Pi-Thermal
 * https://github.com/pimoroni/mlx90640-library
+
+### Additional Heat Images
+
+![hot](https://github.com/tspannhw/FLiP-Py-Pi-GasThermal/blob/main/mlx90640-2022-03-14-12-03-11.gif?raw=true)
+![hot2](https://github.com/tspannhw/FLiP-Py-Pi-GasThermal/blob/main/mlx90640-2022-03-14-12-03-27.gif?raw=true)
+![more3](https://github.com/tspannhw/FLiP-Py-Pi-GasThermal/blob/main/mlx90640-2022-03-14-12-03-37.gif?raw=true)
+![doesanyonereadthis4](https://github.com/tspannhw/FLiP-Py-Pi-GasThermal/blob/main/mlx90640-2022-03-14-12-38-50.gif?raw=true)
+
